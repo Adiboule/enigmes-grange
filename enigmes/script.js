@@ -13,6 +13,7 @@ function checkCode() {
         'code2': 'Super! Voici le deuxième code!',
         'code3': 'Excellent! Vous avez atteint la dernière étape!',
         'image': 'Voici votre image!',
+        'parking': 'Donne le numéro de la place de parking manquante',
         'video': 'Voici votre vidéo!'
     };
 
@@ -23,7 +24,7 @@ function checkCode() {
 
         // Affichage de l'image si le code est "image"
         if (userInput === 'image') {
-            responseImage.src = 'img/logique.png';  // Assurez-vous que le chemin est correct
+            responseImage.src = '../img/logique.png';  // Assurez-vous que le chemin est correct
             responseImage.style.display = 'block';
             responseVideo.style.display = 'none';
         }
@@ -32,6 +33,11 @@ function checkCode() {
             responseVideo.src = 'https://www.youtube.com/embed/iuPcW-GFjlQ?si=MOeXVDkIviqzsQLh';  // Remplacez YOUR_VIDEO_ID par l'ID de votre vidéo YouTube
             responseVideo.style.display = 'block';
             responseImage.style.display = 'none';
+        }
+        else if (userInput === 'parking') {
+            responseImage.src = '../img/parking.png';  // Assurez-vous que le chemin est correct
+            responseImage.style.display = 'block';
+            responseVideo.style.display = 'none';
         }
         else {
             responseImage.style.display = 'none';
