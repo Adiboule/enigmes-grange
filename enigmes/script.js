@@ -30,7 +30,7 @@ function checkCode() {
         }
         // Affichage de la vidéo si le code est "video"
         else if (userInput === '87') {
-            responseVideo.src = 'https://www.youtube.com/watch?v=NfEp5l0UMBE';  // Remplacez YOUR_VIDEO_ID par l'ID de votre vidéo YouTube
+            responseVideo.src = 'https://www.youtube.com/embed/NfEp5l0UMBE?si=jbLq_Uc9VYMup_Io';  // Remplacez YOUR_VIDEO_ID par l'ID de votre vidéo YouTube
             responseVideo.style.display = 'block';
             responseImage.style.display = 'none';
         }
