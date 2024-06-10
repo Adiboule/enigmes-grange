@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeu de Piste</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Jeu de Piste</h1>
+        <p>Entrez le mot ou le code :</p>
+        <input type="text" id="userInput" placeholder="Entrez le code ici">
+        <button onclick="checkCode()">Valider</button>
+        <p id="responseMessage"></p>
+        <img id="responseImage" src="" alt="" style="display:none; margin-top: 20px; max-width: 100%;">
+        <iframe id="responseVideo" src="" style="display:none; margin-top: 20px; width: 100%; height: 315px;" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
