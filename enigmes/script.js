@@ -14,7 +14,7 @@ function checkCode() {
         'code3': 'Excellent! Vous avez atteint la dernière étape!',
         'image': 'Voici votre image!',
         'parking': 'Donne le numéro de la place de parking manquante',
-        'video': 'Voici votre vidéo!'
+        '87': 'Voici votre vidéo!'
     };
 
     // Vérification du code entré par l'utilisateur
@@ -29,8 +29,8 @@ function checkCode() {
             responseVideo.style.display = 'none';
         }
         // Affichage de la vidéo si le code est "video"
-        else if (userInput === 'video') {
-            responseVideo.src = 'https://www.youtube.com/embed/iuPcW-GFjlQ?si=MOeXVDkIviqzsQLh';  // Remplacez YOUR_VIDEO_ID par l'ID de votre vidéo YouTube
+        else if (userInput === '87') {
+            responseVideo.src = 'https://www.youtube.com/watch?v=NfEp5l0UMBE';  // Remplacez YOUR_VIDEO_ID par l'ID de votre vidéo YouTube
             responseVideo.style.display = 'block';
             responseImage.style.display = 'none';
         }
@@ -46,7 +46,7 @@ function checkCode() {
     } else {
         responseMessage.textContent = 'Désolé, ce n\'est pas le bon code. Essayez encore!';
         responseMessage.style.color = 'red';
-        responseImage.style.display = 'none';
-        responseVideo.style.display = 'none';
+        //responseImage.style.display = 'none';
+        //responseVideo.style.display = 'none';
     }
 }
