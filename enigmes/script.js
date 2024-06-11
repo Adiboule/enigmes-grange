@@ -4,7 +4,7 @@ const enigmes = [
     {
         "numéro": 1,
         "bonne_réponse": "937",
-        "contenu": "Bienvenu, pour afficher la prochaine enigme, clic sur le bouton Suivant",
+        "contenu": "Bienvenu, pour afficher la prochaine enigme, clique sur le bouton Suivant",
         "type": "texte",
         "next": 2
     },
