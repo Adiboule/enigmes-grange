@@ -5,7 +5,7 @@ const enigmes = [
         "numéro": 1,
         "bonne_réponse": "937",
         "contenu": "ok MAINTENANT POUR PASSER A LA SUITE CLIQUE SUR LE BOUTON SUIVANT",
-        "question": "Félicitation, première enigme passée,clique sur Valider pour passer à l'énigme suivante",
+        "question": "Félicitation, première enigme passée,clique sur enigme suivante pour passer à l'énigme suivante",
         "type": "texte",
         "next": 2
     },
@@ -69,7 +69,7 @@ const enigmes = [
         "numéro": 9,
         "bonne_réponse": "Tondeuses naturelles",
         "lien": "../img/tondeuse.jpg",
-        "question": "Retrouve ce panneau dans le park.Quels mots se cache sur l'image?",
+        "question": "Retrouve ce panneau dans le parc.Quels mots se cachent sur l'image?",
         "type": "image",
         "next": 10
     },
@@ -77,7 +77,7 @@ const enigmes = [
         "numéro": 10,
         "bonne_réponse": "Monde",
         "contenu": "https://youtube.com/embed/cLEMWYQCjlU?si=92dqFSOQatpj7E9D",
-        "question": "Le prochaine mot à trouver se trouve dans le lieu de la vidéo. A toi de retrouver cet endroit dans le park",
+        "question": "Le prochain mot à trouver se trouve dans le lieu de la vidéo. A toi de retrouver cet endroit dans le parc",
         "type": "video",
         "next": 11
     },
@@ -92,10 +92,10 @@ const enigmes = [
     },
     {
         "numéro": 12,
-        "bonne_réponse": "Shakespeare",
-        "contenu": "Qui a écrit Roméo et Juliette?",
-        "question": "Trouve le code secret caché avec l'image--TODO",
-        "type": "texte",
+        "bonne_réponse": "brbjbjv",
+        "lien": "../img/couleur.jpg",
+        "question": "Pour trouver le code secret de cette énigme, tu dois d'abord retrouver cet endroit, puis trouver le code composé de 7 lettres.",
+        "type": "image",
         "next": 13
     },
     {
