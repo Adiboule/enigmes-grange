@@ -4,93 +4,105 @@ const enigmes = [
     {
         "numéro": 1,
         "bonne_réponse": "937",
-        "contenu": "Bienvenu, pour afficher la prochaine enigme, clique sur le bouton Suivant",
+        "contenu": "ok MAINTENANT POUR PASSER A LA SUITE CLIQUE SUR LE BOUTON SUIVANT",
+        "question": "Félicitation, première enigme passée,clique sur Valider pour passer à l'énigme suivante",
         "type": "texte",
         "next": 2
     },
     {
         "numéro": 2,
-        "bonne_réponse": "b",
-        "contenu": "Quelle est la célèbre équation d'Einstein?",
+        "bonne_réponse": "14000 cm",
+        "contenu": "",
+        "question": "Quelle est la hauteur moyenne du jet d'eau à Genève? Donne la réponse en centimètre, avec l'unité",
         "type": "texte",
         "next": 3
     },
     {
         "numéro": 3,
-        "bonne_réponse": "La Joconde",
-        "contenu": "Trouve le mot caché",
-        "lien": "../img/HP.webp",
-        "type": "image",
+        "bonne_réponse": "Une somme",
+        "contenu": " ",
+        "question": "Comment s'appelle le résultat d'une addition ?",        
+        "type": "texte",
         "next": 4
     },
     {
         "numéro": 4,
-        "bonne_réponse": "Tour Eiffel",
-        "contenu": "trouve la place de parking",
-        "lien": "../img/parking.png",
-        "type": "image",
+        "bonne_réponse": "1602",
+        "contenu": " ",
+        "question": "En quelle année a- t - on vu la bataille de l'escalade à Genève?",
+        "type": "texte",
         "next": 5
     },
     {
         "numéro": 5,
-        "bonne_réponse": "Pythagore",
-        "contenu": "Qui a formulé le théorème a^2 + b^2 = c^2?",
+        "bonne_réponse": "Tang",
+        "contenu": " ",
+        "question": "Quel est le  nom de famille d'Emma?",
         "type": "texte",
         "next": 6
     },
     {
         "numéro": 6,
-        "bonne_réponse": "Leonardo da Vinci",
-        "contenu": "video_da_vinci.mp4",
-        "type": "video",
+        "bonne_réponse": "87",
+        "lien": "../img/parking.png",
+        "question": "Trouve le numéro de place de parking caché par la voiture",
+        "type": "image",
         "next": 7
     },
     {
         "numéro": 7,
-        "bonne_réponse": "Newton",
-        "contenu": "Qui a découvert la gravité en observant une pomme tomber?",
-        "type": "texte",
+        "bonne_réponse": "153",
+        "lien": "../img/operation.png",
+        "question": "Résous cette opération bien particulière....",
+        "type": "image",
         "next": 8
     },
     {
         "numéro": 8,
-        "bonne_réponse": "H2O",
-        "contenu": "Quelle est la formule chimique de l'eau?",
-        "type": "texte",
+        "bonne_réponse": "Catherine de Médicis",
+        "lien": "../img/cat.jpg",
+        "question": "Trouve le personnage cachée dans ce rébus",
+        "type": "image",
         "next": 9
     },
     {
         "numéro": 9,
-        "bonne_réponse": "Paris",
-        "contenu": "image_paris.jpg",
+        "bonne_réponse": "Tondeuses naturelles",
+        "lien": "../img/tondeuse.jpg",
+        "question": "Retrouve ce panneau dans le park.Quels mots se cache sur l'image?",
         "type": "image",
         "next": 10
     },
     {
         "numéro": 10,
         "bonne_réponse": "Monde",
-        "contenu": "video_monde.mp4",
+        "contenu": "https://youtube.com/embed/cLEMWYQCjlU?si=92dqFSOQatpj7E9D",
+        "question": "Le prochaine mot à trouver se trouve dans le lieu de la vidéo. A toi de retrouver cet endroit dans le park",
         "type": "video",
         "next": 11
     },
     {
         "numéro": 11,
-        "bonne_réponse": "Mozart",
-        "contenu": "Qui a composé La Flûte Enchantée?",
-        "type": "texte",
+        "bonne_réponse": "Harry Potter",
+        "contenu": " ",
+        "question": "Trouve le personnage fictif caché dans ce rebus",
+        "lien": "../img/HP.webp",
+        "type": "image",
         "next": 12
     },
     {
         "numéro": 12,
         "bonne_réponse": "Shakespeare",
         "contenu": "Qui a écrit Roméo et Juliette?",
+        "question": "Trouve le code secret caché avec l'image--TODO",
         "type": "texte",
         "next": 13
     },
     {
         "numéro": 13,
-        "bonne_réponse": "Lune",
-        "contenu": "image_lune.jpg",
+        "bonne_réponse": "Une abeille",
+        "lien": "../img/abeille.jpg",
+        "question": "Rend toi à cet endroit pour trouver l'animal dessiné dans le buisson",
         "type": "image",
         "next": 14
     },
@@ -98,52 +110,67 @@ const enigmes = [
         "numéro": 14,
         "bonne_réponse": "Berlin",
         "contenu": "localisation_berlin.png",
+        "question": "TODO",
         "type": "localisation",
         "next": 15
     },
     {
         "numéro": 15,
-        "bonne_réponse": "Tesla",
-        "contenu": "video_tesla.mp4",
-        "type": "video",
+        "bonne_réponse": "Jeckyll",
+        "lien": "../img/gertrude.jpg",
+        "question": "Retrouve cette fleur dans le parc, pour trouver le mot manquant",
+        "type": "image",
         "next": 16
     },
     {
         "numéro": 16,
-        "bonne_réponse": "Amazon",
-        "contenu": "Quelle est la plus grande forêt tropicale du monde?",
-        "type": "texte",
+        "bonne_réponse": "Naruto",
+        "contenu": "https://www.youtube.com/embed/FXdShmxPYmA?si=lkH2cNnIczdazIeI",
+        "question": "Peut etre faut il retrouver l'endroit de la vidéo?",
+        "type": "video",
         "next": 17
     },
     {
         "numéro": 17,
-        "bonne_réponse": "Everest",
-        "contenu": "Quel est le sommet le plus haut du monde?",
-        "type": "texte",
+        "bonne_réponse": "Valorant",
+        "lien": "../img/arbre.jpg",
+        "question": "Retrouve cet endroit dans le parc pour trouver le mot secret",
+        "type": "image",
         "next": 18
     },
     {
         "numéro": 18,
-        "bonne_réponse": "Colisée",
-        "contenu": "image_colisee.jpg",
-        "type": "image",
+        "bonne_réponse": "WC",
+        "lien": "../img/panneau.jpg",
+        "question": "Retrouve ce panneau  dans le parc pour trouver le mot secret flouté",
+        "type": "localisation",
         "next": 19
     },
     {
         "numéro": 19,
-        "bonne_réponse": "Mont Blanc",
-        "contenu": "localisation_mont_blanc.png",
+        "bonne_réponse": "Menhirs",
+        "lien": "../img/obelix.jpg",
+        "question": "Retrouve cet endroit dans le parc pour trouver le mot secret",
         "type": "localisation",
         "next": 20
     },
     {
         "numéro": 20,
-        "bonne_réponse": "Nobel",
-        "contenu": "Qui a inventé la dynamite et donné son nom à un célèbre prix?",
+        "bonne_réponse": "terrasse",
+        "lien": "../img/theatre.jpg",
+        "question": "Retrouve cet endroit dans le parc pour trouver le mot secret",
+        "type": "localisation",
+        "next": 21
+    },
+    {
+        "numéro": 21,
+        "bonne_réponse": "Foron",
+        "lien": "../img/fin.jpg",
+        "question": "Retrouve cet endroit dans le parc pour trouver le secret final",
         "type": "texte",
         "next": null
     }
-];
+]
 
 function checkCode() {
     const userInput = document.getElementById('userInput').value.toLowerCase();
@@ -166,7 +193,7 @@ function displayEnigme(enigme) {
     const responseVideo = document.getElementById('responseVideo');
     const nextEnigmeButton = document.getElementById('nextEnigmeButton');
 
-    responseMessage.innerText = enigme.contenu;
+    responseMessage.innerText = enigme.question;
 
     // Mettre à jour le tableau avec les informations de l'énigme
     document.getElementById('enigmeType').innerText = enigme.type;
@@ -184,7 +211,12 @@ function displayEnigme(enigme) {
         responseVideo.src = enigme.contenu;
         responseVideo.style.display = 'block';
         responseImage.style.display = 'none';
-    } else {
+    } else if (enigme.type === 'localisation') {
+        responseImage.src = enigme.lien;
+        responseImage.style.display = 'block';
+        responseVideo.style.display = 'none';
+    }
+    else {
         responseImage.style.display = 'none';
         responseVideo.style.display = 'none';
     }
@@ -203,7 +235,7 @@ function displayEnigme(enigme) {
 
 function loadNextEnigme() {
     const nextEnigmeButton = document.getElementById('nextEnigmeButton');
-    
+    document.getElementById('userInput').value = '';
     if (currentEnigmeNum) {
         const nextEnigme = enigmes.find(e => e.numéro === currentEnigmeNum);
         if (nextEnigme) {
