@@ -44,7 +44,7 @@ const enigmes = [
     {
         "numéro": 6,
         "bonne_réponse": "87",
-        "lien": "../img/parking.png",
+        "lien": "../../img/parking.png",
         "question": "Trouve le numéro de place de parking caché par la voiture",
         "type": "image",
         "next": 13
@@ -52,7 +52,7 @@ const enigmes = [
     {
         "numéro": 7,
         "bonne_réponse": "153",
-        "lien": "../img/operation.png",
+        "lien": "../../img/operation.png",
         "question": "Résous cette opération bien particulière....",
         "type": "image",
         "next": 2
@@ -60,7 +60,7 @@ const enigmes = [
     {
         "numéro": 8,
         "bonne_réponse": "Catherine de Médicis",
-        "lien": "../img/cat.jpg",
+        "lien": "../../img/cat.jpg",
         "question": "Trouve le personnage cachée dans ce rébus",
         "type": "image",
         "next": 19
@@ -68,7 +68,7 @@ const enigmes = [
     {
         "numéro": 9,
         "bonne_réponse": "Tondeuses naturelles",
-        "lien": "../img/tondeuse.jpg",
+        "lien": "../../img/tondeuse.jpg",
         "question": "Retrouve ce panneau dans le parc.Quels mots se cachent sur l'image?",
         "type": "image",
         "next": 4
@@ -86,14 +86,14 @@ const enigmes = [
         "bonne_réponse": "Harry Potter",
         "contenu": " ",
         "question": "Trouve le personnage fictif caché dans ce rebus",
-        "lien": "../img/HP.webp",
+        "lien": "../../img/HP.webp",
         "type": "image",
         "next": 14
     },
     {
         "numéro": 12,
         "bonne_réponse": "brbjbjv",
-        "lien": "../img/couleur.jpg",
+        "lien": "../../img/couleur.jpg",
         "question": "Pour trouver le code secret de cette énigme, tu dois d'abord retrouver cet endroit, puis trouver le code composé de 7 lettres.",
         "type": "image",
         "next": 21
@@ -101,7 +101,7 @@ const enigmes = [
     {
         "numéro": 13,
         "bonne_réponse": "Une abeille",
-        "lien": "../img/abeille.jpg",
+        "lien": "../../img/abeille.jpg",
         "question": "Rend toi à cet endroit pour trouver l'animal dessiné dans le buisson",
         "type": "image",
         "next": 16
@@ -117,7 +117,7 @@ const enigmes = [
     {
         "numéro": 15,
         "bonne_réponse": "Jeckyll",
-        "lien": "../img/gertrude.jpg",
+        "lien": "../../img/gertrude.jpg",
         "question": "Retrouve cette fleur dans le parc, pour trouver le mot manquant",
         "type": "image",
         "next": 17
@@ -133,7 +133,7 @@ const enigmes = [
     {
         "numéro": 17,
         "bonne_réponse": "Valorant",
-        "lien": "../img/arbre.jpg",
+        "lien": "../../img/arbre.jpg",
         "question": "Retrouve cet endroit dans le parc pour trouver le mot secret",
         "type": "image",
         "next": 7
@@ -141,7 +141,7 @@ const enigmes = [
     {
         "numéro": 18,
         "bonne_réponse": "WC",
-        "lien": "../img/panneau.jpg",
+        "lien": "../../img/panneau.jpg",
         "question": "Retrouve ce panneau  dans le parc pour trouver le mot secret flouté",
         "type": "localisation",
         "next": 9
@@ -149,7 +149,7 @@ const enigmes = [
     {
         "numéro": 19,
         "bonne_réponse": "Menhirs",
-        "lien": "../img/obelix.jpg",
+        "lien": "../../img/obelix.jpg",
         "question": "Retrouve cet endroit dans le parc pour trouver le mot secret",
         "type": "localisation",
         "next": 15
@@ -157,7 +157,7 @@ const enigmes = [
     {
         "numéro": 20,
         "bonne_réponse": "terrasse",
-        "lien": "../img/theatre.jpg",
+        "lien": "../../img/theatre.jpg",
         "question": "Retrouve cet endroit dans le parc pour trouver le mot secret",
         "type": "localisation",
         "next": 3
@@ -165,7 +165,7 @@ const enigmes = [
     {
         "numéro": 21,
         "bonne_réponse": "Foron",
-        "lien": "../img/fin.jpg",
+        "lien": "../../img/fin.jpg",
         "question": "Retrouve cet endroit dans le parc pour trouver le secret final",
         "type": "image",
         "next": null
