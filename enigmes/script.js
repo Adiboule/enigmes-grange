@@ -108,10 +108,10 @@ const enigmes = [
     },
     {
         "numéro": 14,
-        "bonne_réponse": "Berlin",
-        "contenu": "localisation_berlin.png",
-        "question": "TODO",
-        "type": "localisation",
+        "bonne_réponse": "évidente",
+        "contenu": "",
+        "question": "Pour cette énigme, c'est facile, la réponse est évidente",
+        "type": "texte",
         "next": 15
     },
     {
@@ -167,7 +167,7 @@ const enigmes = [
         "bonne_réponse": "Foron",
         "lien": "../img/fin.jpg",
         "question": "Retrouve cet endroit dans le parc pour trouver le secret final",
-        "type": "texte",
+        "type": "image",
         "next": null
     }
 ]
@@ -176,14 +176,38 @@ function checkCode() {
     const userInput = document.getElementById('userInput').value.toLowerCase();
     const enigmeTrouvee = enigmes.find(e => e.numéro === currentEnigmeNum && e.bonne_réponse.toLowerCase() === userInput);
 
+    const statusTable = document.getElementById('statusTable');
+    const responseStatus = document.getElementById('responseStatus');
+
     if (enigmeTrouvee) {
         currentEnigmeNum = enigmeTrouvee.next; // Mettre à jour pour la prochaine énigme
         displayEnigme(enigmeTrouvee);
         updateCurrentEnigmeNumDisplay(); // Mettre à jour l'affichage du numéro de l'énigme actuelle
         document.getElementById('responseStatus').innerText = 'Bonne réponse!';
+        statusTable.classList.add('status-ok');
+        statusTable.classList.remove('status-fail');
+        statusTable.classList.add('status-table');
     } else {
-        //document.getElementById('responseMessage').innerText = 'Code incorrect, veuillez réessayer.';
-        document.getElementById('responseStatus').innerText = 'Mauvaise réponse';
+        responseStatus.innerText = 'Mauvaise réponse';
+        statusTable.classList.add('status-fail');
+        statusTable.classList.remove('status-ok');
+        statusTable.classList.add('status-table');
+        // Faire disparaître le tableau avec un effet de fondu après 4 secondes
+        setTimeout(() => {
+            statusTable.classList.add('fade-out');
+        }, 2000);
+
+        // Masquer le tableau après l'animation
+        setTimeout(() => {
+            statusTable.classList.remove('status-table');
+            responseStatus.innerText = '';
+        }, 3000);
+        setTimeout(() => {
+            statusTable.classList.remove('fade-out');
+            responseStatus.innerText = '';
+        }, 3000);
+       
+        
     }
 }
 
@@ -193,15 +217,11 @@ function displayEnigme(enigme) {
     const responseVideo = document.getElementById('responseVideo');
     const nextEnigmeButton = document.getElementById('nextEnigmeButton');
 
+
     responseMessage.innerText = enigme.question;
 
-    // Mettre à jour le tableau avec les informations de l'énigme
-    document.getElementById('enigmeType').innerText = enigme.type;
-    if (enigme.type === 'image' || enigme.type === 'video') {
-        document.getElementById('enigmeContent').innerText = '';
-    } else {
-        document.getElementById('enigmeContent').innerText = enigme.contenu;
-    }
+    
+    
 
     if (enigme.type === 'image') {
         responseImage.src = enigme.lien;
@@ -235,6 +255,9 @@ function displayEnigme(enigme) {
 
 function loadNextEnigme() {
     const nextEnigmeButton = document.getElementById('nextEnigmeButton');
+    const statusTable = document.getElementById('statusTable');
+    statusTable.classList.remove('status-table');
+    statusTable.classList.remove('status-ok');
     document.getElementById('userInput').value = '';
     if (currentEnigmeNum) {
         const nextEnigme = enigmes.find(e => e.numéro === currentEnigmeNum);
@@ -244,6 +267,7 @@ function loadNextEnigme() {
         }
     }
     nextEnigmeButton.style.display = 'none'; // Cacher le bouton après avoir cliqué dessus
+    statusTable.classList.remove('fade-out');// Donne 1 seconde de plus pour compléter le fade-out
 }
 
 function updateCurrentEnigmeNumDisplay() {

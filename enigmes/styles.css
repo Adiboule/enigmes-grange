@@ -62,6 +62,9 @@ table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    display: none; /* Caché par défaut */
+    opacity: 1; /* Par défaut, le tableau est complètement visible */
+    transition: opacity 1s ease-out; /* Ajoute une transition pour le fondu */
 }
 
 th, td {
@@ -75,3 +78,20 @@ th {
     color: white;
 }
 
+.status-table {
+    display: table; /* Affiche le tableau en mode table */
+}
+
+.status-ok {
+    background-color: green;
+    color: white;
+}
+
+.status-fail {
+    background-color: red;
+    color: white;
+}
+
+.fade-out {
+    opacity: 0; /* Cache progressivement le tableau */
+}
