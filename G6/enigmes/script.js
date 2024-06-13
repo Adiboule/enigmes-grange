@@ -7,7 +7,7 @@ const enigmes = [
         "contenu": "ok MAINTENANT POUR PASSER A LA SUITE CLIQUE SUR LE BOUTON SUIVANT",
         "question": "Félicitation, première enigme passée,clique sur enigme suivante pour passer à l'énigme suivante",
         "type": "texte",
-        "next": 58
+        "next": 5
     },
     {
         "numéro": 2,
