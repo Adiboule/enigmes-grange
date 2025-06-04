@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suspects : L'enquête</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      text-align: center;
+      padding: 30px 10px;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+    .suspect {
+      background-color: #222;
+      border: 2px solid #4CAF50;
+      border-radius: 10px;
+      width: 300px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5em;
+      font-weight: bold;
+      cursor: pointer;
+      text-align: center;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+      text-decoration: none;
+      color: white;
+    }
+    .suspect:hover {
+      background-color: #4CAF50;
+      transform: scale(1.05);
+      color: black;
+    }
+    .locked {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Choisis un suspect à interroger</h1>
+  <div class="container">
+    <a href="suspect1.html" class="suspect" id="suspect1">Le prof de maths</a>
+    <a href="suspect2.html" class="suspect locked" id="suspect2">L'agent technique</a>
+    <a href="suspect3.html" class="suspect locked" id="suspect3">Le prof de musique</a>
+    <a href="suspect4.html" class="suspect locked" id="suspect4">L’ancienne élève</a>
+    <button onclick="localStorage.clear(); location.reload();" style="margin-top:20px;">
+  Réinitialiser la progression
+</button>
+  </div>
+
+  <script>
+    // Afficher les suspects débloqués
+    if (localStorage.getItem("suspect1") === "done") {
+      document.getElementById("suspect2").classList.remove("locked");
+    }
+    if (localStorage.getItem("suspect2") === "done") {
+      document.getElementById("suspect3").classList.remove("locked");
+    }
+    if (localStorage.getItem("suspect3") === "done") {
+      document.getElementById("suspect4").classList.remove("locked");
+    }
+  </script>
+</body>
+</html>

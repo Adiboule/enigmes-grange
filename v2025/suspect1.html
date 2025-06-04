@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Le Prof de Maths</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #111;
+      color: white;
+      padding: 20px;
+    }
+    iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+      margin-bottom: 20px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🧮 Le Prof de Maths</h1>
+  <p>Il aurait été jaloux de ne pas avoir été choisi pour le voyage à Zermatt. Aurait-il voulu se venger ?</p>
+  <p>Une note trouvée dans sa salle contient un étrange tableau de chiffres...</p>
+
+  <div id="etape1">
+    <iframe src="https://lockee.fr/o/Ke49OVdN?nobg&noft"></iframe>
+  </div>
+
+  <div id="etape2" style="display:none;">
+    <iframe src="https://lockee.fr/o/zzSjB01p?nobg&noft"></iframe>
+  </div>
+
+  <a href="https://www.lockee.fr/o/TON-CODE-ICI" onclick="localStorage.setItem('suspect1','done')" target="_blank" class="btn">
+    Accéder à l’énigme finale
+  </a>
+
+  <script>
+    // Vérifie si l'URL contient "BANANE"
+    const url = new URL(window.location.href);
+    const searchParams = url.searchParams;
+    const param = url.href.includes("BANANE");
+
+    if (param) {
+      document.getElementById("etape1").style.display = "none";
+      document.getElementById("etape2").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
