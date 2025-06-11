@@ -128,9 +128,32 @@
     </a>
   </div>
 
-  <button onclick="localStorage.clear(); location.reload();">🔄 Réinitialiser la progression</button>
 
   <script>
+
+
+    if (window.location.href.includes("ADMIN")) {
+      const resetBtn = document.createElement("button");
+      resetBtn.innerHTML = "🔄 Réinitialiser la progression";
+      resetBtn.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        background-color: #e74c3c;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 16px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        z-index: 999;
+      `;
+      resetBtn.onclick = () => {
+        localStorage.clear();
+        location.reload();
+      };
+      document.body.appendChild(resetBtn);
+  }
     const suspects = ["suspect1", "suspect2", "suspect3", "suspect4"];
 
     suspects.forEach((id, index) => {
