@@ -2,16 +2,138 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Le Prof de Musique</title>
+  <title>Suspect : Le Prof de Musique</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #111;
+      color: white;
+      padding: 20px;
+    }
+    iframe {
+      width: 100%;
+      height: 800px;
+      border: none;
+      margin-bottom: 20px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+    }
+  </style>
 </head>
-<body style="font-family:sans-serif; background:#111; color:white; padding:20px;">
-  <h1>🎵 Le Prof de Musique</h1>
-  <p>Il vouait une fascination étrange à Queen et à Mme ***. Une partition annotée a été retrouvée dans sa classe.</p>
-  <p>"She knows too much" est écrit en rouge. Était-ce un avertissement ?</p>
+<body>
 
-  <a href="https://www.lockee.fr/o/TON-CODE-ICI" onclick="localStorage.setItem('suspect3','done')" target="_blank"
-     style="display:inline-block; padding:10px 20px; background:#4CAF50; color:white; text-decoration:none; border-radius:10px;">
-    Accéder à l’énigme
-  </a>
+  <h1>🎵 Suspect : Le Professeur de Musique</h1>
+  <p>
+    Enseignant discret mais passionné, il aurait été vu à plusieurs endroits suspects dans le parc, fredonnant des airs de musique étranges...  
+    Certains élèves l’ont trouvé bizarrement nerveux ces derniers temps, et des indices semblent avoir été laissés par inadvertance.
+  </p>
+
+  <div id="etape1">
+    <h2>Énigme 1 - La Photo du Parc</h2>
+    <p>
+      Une photo floue montre une partie du parc. En l'observant attentivement,il manque un élément. Quel est il?  
+      Ce serait là qu'un indice a été aperçu.
+    </p>
+    <img src="../img/panneau.jpg" alt="Énigme" style="display:block; width:100%; max-width:600px; margin:20px auto; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.5);">
+
+    
+    <iframe src="https://lockee.fr/o/BUr26MPh?nobg&noft&top&light"></iframe>
+  </div>
+
+  <div id="etape2" style="display:none;">
+    <h2>Énigme 2 - Une autre photo mystérieuse</h2>
+    <p>
+      Une autre image retrouvée dans la salle de musique pointe vers un lieu bien particulier du parc... .  
+      Peut-être que les sons qu’il y fredonnait prennent ici tout leur sens.
+    </p>
+    <img src="../img/theatre.jpg" alt="Énigme" style="display:block; width:100%; max-width:600px; margin:20px auto; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.5);">
+
+    
+    <iframe src="https://lockee.fr/o/hFih9VuE?nobg&noft&top&light"></iframe>
+  </div>
+
+  <div id="etape3" style="display:none;">
+    <h2>Énigme 3 - La portée musicale</h2>
+    <p>
+      Dans son bureau, une partition étrange contenait une musique.  
+      <p>
+        <button onclick="document.getElementById('morseAudio').play()" style="padding:10px 15px; font-size:16px;">
+          🎧 Écouter le message audio
+        </button>
+      </p>
+      <audio id="morseAudio" src="../img/melody.wav"></audio>
+      Vous devrez retrouver ces notes et reconstituer le mot sur Lockee.
+
+      <a href="https://lockee.fr/o/1BOGmEn5" class="btn">
+      lien d'un piano numérique
+      </a>
+      
+
+    </p>    
+    <iframe src="https://lockee.fr/o/Ka71tHYS?nobg&noft&top&light"></iframe>
+  </div>
+
+  <div id="etape4" style="display:none;">
+    <h2>Énigme 4 - Le téléphone et le morse</h2>
+    <p>
+      Sur une feuille oubliée par le professeur, un numéro de téléphone était griffonné.  
+      En appelant ce numéro, on entend un étrange message audio… c’est du morse. Il faut le décoder.
+
+      <a href="https://lockee.fr/o/JWYdnlTB" class="btn">
+      Appeler le numero
+      </a>
+      
+    </p>   
+    <iframe src="https://lockee.fr/o/No6kvxmk?nobg&noft&top&light"></iframe>
+  </div>
+
+  <div id="etape5" style="display:none;">
+    <h2>Énigme 5 - Une abeille dans le parc</h2>
+    <p>
+      À côté d’un massif de fleurs, une décoration représentant une abeille a attiré l’attention de plusieurs témoins.  
+      Coïncidence ou message laissé volontairement ?
+    </p>
+    <p><strong>Mot attendu : ABEILLE</strong></p>
+    <iframe src="https://lockee.fr/o/09as9zdt?nobg&noft&top&light"></iframe>
+   
+  </div>
+
+  <div id="etape6" style="display:none;">
+    <h3>Fin de l’enquête sur ce suspect.</h3>
+    <a href="./suspects.html" onclick="localStorage.setItem('suspect3','done')" class="btn">
+      Retour aux suspects
+    </a>
+    
+  </div>
+
+
+  <script>
+    const params = window.location.href.toUpperCase();
+    for (let i = 1; i <= 6; i++) {
+      document.getElementById("etape" + i).style.display = "none";
+    }
+
+    if (params.includes("BANANE")) {
+      document.getElementById("etape2").style.display = "block";
+    } else if (params.includes("POMME")) {
+      document.getElementById("etape3").style.display = "block";
+    } else if (params.includes("KIWI")) {
+      document.getElementById("etape4").style.display = "block";
+    } else if (params.includes("ANANAS")) {
+      document.getElementById("etape5").style.display = "block";
+    } else if (params.includes("CERISES")) {
+      document.getElementById("etape6").style.display = "block";
+    } else {
+      document.getElementById("etape1").style.display = "block";
+    }
+  </script>
+
+
 </body>
 </html>

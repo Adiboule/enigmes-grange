@@ -1,17 +1,139 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>L’Agent Technique</title>
+  <title>Suspect : L'Agent</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #111;
+      color: white;
+      padding: 20px;
+    }
+    iframe {
+      width: 100%;
+      height: 800px;
+      border: none;
+      margin-bottom: 20px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+    }
+    img {
+      display: block;
+      width: 100%;
+      max-width: 600px;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+  </style>
 </head>
-<body style="font-family:sans-serif; background:#111; color:white; padding:20px;">
-  <h1>🔧 L’Agent Technique</h1>
-  <p>Il a quitté son poste peu après la disparition. Un trousseau de clés rouillé portant l'inscription "GRANGE" a été retrouvé.</p>
-  <p>Un vieux plan du parc a été trouvé dans son casier...</p>
+<body>
 
-  <a href="https://www.lockee.fr/o/TON-CODE-ICI" onclick="localStorage.setItem('suspect2','done')" target="_blank"
-     style="display:inline-block; padding:10px 20px; background:#4CAF50; color:white; text-decoration:none; border-radius:10px;">
-    Accéder à l’énigme
-  </a>
+  <h1>🕵️ Suspect : L'Agent d'entretien</h1>
+  <p>Discret et toujours présent dans le parc, l'agent d'entretien connaît les moindres recoins du lieu. Il aurait pu cacher quelque chose… ou avoir vu quelque chose qu’il ne fallait pas. À nous de le découvrir.</p>
+
+  <div id="etape1">
+    <h2>Énigme 1 - L'Arbre</h2>
+    <p>
+      Une source anonyme a signalé qu'un mot aurait été gravé sur un arbre dans la zone boisée du parc. Selon elle, ce mot serait lié à un échange suspect entendu entre deux individus tard le soir. 
+    </p>
+    <p>
+      Le mot serait : <strong>complice</strong>. Il pourrait ouvrir la voie vers une piste capitale.
+    </p>
+    <img src="../img/arbre.jpg" alt="Énigme" style="display:block; width:100%; max-width:600px; margin:20px auto; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.5);">
+
+    <iframe src="https://lockee.fr/o/znOhjRum?nobg&noft&top&light"></iframe>
+  </div>
+
+  <div id="etape2" style="display:none;">
+    <h2>Énigme 2 - Le Jeu d’enfants</h2>
+    <p>
+      En enquêtant autour de l’aire de jeux, un témoin a raconté avoir vu l’agent dessiner avec de la craie des motifs colorés. Était-ce un simple jeu ou un code secret ?
+      En observant les couleurs sur les jeux pour enfants, vous découvrirez peut-être un message laissé à destination d’un complice…
+    </p>
+    <img src="../img/couleur.jpg" alt="Énigme" style="display:block; width:100%; max-width:600px; margin:20px auto; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.5);">
+
+    <iframe src="https://lockee.fr/o/9DsozQFi?nobg&noft&top&light"></iframe>
+  </div>
+
+  <div id="etape3" style="display:none;">
+    <h2>Énigme 3 - La Plante empoisonnée</h2>
+    <p>
+      Dans le jardin du parc, une plante a récemment été déplacée. Or, cette plante est connue pour ses propriétés toxiques… Elle s’appelle <strong>belladone</strong>.
+      Est-ce une coïncidence ou un indice ? Peut-être que l’agent connaissait cette propriété ?
+    </p>
+    <p>
+      Trouvez la pancarte qui donne son nom et utilisez ce mot pour percer l’énigme suivante.
+    </p>
+     <img src="../img/gertrude.jpg" alt="Énigme" style="display:block; width:100%; max-width:600px; margin:20px auto; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.5);">
+
+    <iframe src="https://lockee.fr/o/BRf4AsDd?nobg&noft&top&light"></iframe>
+  </div>
+
+  <div id="etape4" style="display:none;">
+    <h2>Énigme 4 - Les ruines préhistoriques</h2>
+    <p>
+      Il paraîtrait que l’agent a été aperçu plusieurs fois en train de nettoyer les alentours des ruines, même lorsqu’il n’était pas affecté à cette zone.
+      Une pancarte ancienne y indique un mot qui pourrait servir de mot de passe… Était-ce un lieu de rendez-vous ou une cachette ?
+    </p>
+    <img src="../img/obelix.jpg" alt="Énigme" style="display:block; width:100%; max-width:600px; margin:20px auto; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.5);">
+
+    <iframe src="https://lockee.fr/o/DL1w9CBy?nobg&noft&top&light"></iframe>
+  </div>
+
+  <div id="etape5" style="display:none;">
+    <h2>Énigme 5 - Les Moutons</h2>
+    <p>
+      Des promeneurs réguliers du parc ont vu l’agent parler... aux moutons. D’abord absurde, cette scène prend du sens lorsqu’on apprend qu’une petite boîte en métal a été retrouvée dans l’herbe tondue.
+      Peut-être y avait-il un message caché ou un objet volé ?
+    </p>
+     <img src="../img/tondeuse.jpg" alt="Énigme" style="display:block; width:100%; max-width:600px; margin:20px auto; border-radius:10px; box-shadow:0 0 10px rgba(0,0,0,0.5);">
+
+    <iframe src="https://lockee.fr/o/7Fw4BpW9?nobg&noft&top&light"></iframe>
+   
+  </div>
+
+  <div id="etape6" style="display:none;">
+    <h2>Suspect identifié</h2>
+    <p>
+      Toute les infos sont OK
+    </p>
+     
+   
+    <h3>Fin de l’enquête sur ce suspect</h3>
+    <a href="./suspects.html" onclick="localStorage.setItem('suspect2','done')" class="btn">
+      Retour aux suspects
+    </a>
+  </div>
+
+  <script>
+    const params = window.location.href.toUpperCase();
+    for (let i = 1; i <= 6; i++) {
+      document.getElementById("etape" + i).style.display = "none";
+    }
+
+    if (params.includes("BANANE")) {
+      document.getElementById("etape2").style.display = "block";
+    } else if (params.includes("POMME")) {
+      document.getElementById("etape3").style.display = "block";
+    } else if (params.includes("KIWI")) {
+      document.getElementById("etape4").style.display = "block";
+    } else if (params.includes("ANANAS")) {
+      document.getElementById("etape5").style.display = "block";
+    } else if (params.includes("CERISES")) {
+      document.getElementById("etape6").style.display = "block";
+    } else {
+      document.getElementById("etape1").style.display = "block";
+    }
+  </script>
+
 </body>
 </html>
