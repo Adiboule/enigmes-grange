@@ -2,16 +2,130 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>L’Ancienne Élève</title>
+  <title>Suspect : L'ancienne élève</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #111;
+      color: white;
+      padding: 20px;
+    }
+    iframe {
+      width: 100%;
+      height: 800px;
+      border: none;
+      margin-bottom: 20px;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+    }
+  </style>
 </head>
-<body style="font-family:sans-serif; background:#111; color:white; padding:20px;">
-  <h1>🕵️‍♀️ L’Ancienne Élève</h1>
-  <p>Disparue après les vacances d’octobre, elle avait un compte à régler avec la prof d’anglais. Une lettre signée "C.S." a été retrouvée.</p>
-  <p>Le carnet contenait une page déchirée où apparaissait : "Grange. Trees. No return."</p>
+<body>
 
-  <a href="https://www.lockee.fr/o/TON-CODE-ICI" onclick="localStorage.setItem('suspect4','done')" target="_blank"
-     style="display:inline-block; padding:10px 20px; background:#4CAF50; color:white; text-decoration:none; border-radius:10px;">
-    Accéder à l’énigme
+  <h1>🧩 Suspect : L'Ancienne Élève</h1>
+
+  <a href="suspects.html" style="
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    z-index: 999;
+  ">
+    🔙 Retour aux suspects
   </a>
+  <p>
+    Élève brillante mais mystérieuse, elle entretenait une relation particulière avec la professeure d’anglais.  
+    Elle semble vouloir aider à l’enquête, mais certains indices l'impliquent directement… à vous de démêler le vrai du faux.
+  </p>
+
+  <div id="etape1">
+    <h2>Énigme 1 - Rébus visuel #1</h2>
+    <p>
+      Une image codée a été trouvée dans le cahier de l'élève. Il s’agit d’un rébus qui pourrait révéler une information essentielle sur le lieu de la disparition.
+    </p>
+    <img src="../img/cat.jpg" alt="Rébus 1">
+    <iframe src="https://lockee.fr/o/4xlsyeXm?nobg&noft&top&light"></iframe>
+  </div>
+
+  <div id="etape2" style="display:none;">
+    <h2>Énigme 2 - Rébus visuel #2</h2>
+    <p>
+      Un second rébus a été retrouvé, cette fois-ci griffonné au dos d’un emploi du temps.  
+      Il semblerait que ces images codées aient été destinées à quelqu’un d’autre…
+    </p>
+    <img src="../img/HP.webp" alt="Rébus 2">
+    <iframe src="https://lockee.fr/o/dUxgF4Ie?nobg&noft&top&light"></iframe>
+  </div>
+
+  <div id="etape3" style="display:none;">
+    <h2>Énigme 3 - Le numéro à composer</h2>
+    <p>
+      Un numéro a été découvert dans une ancienne note de la professeure.  
+      En l’appelant via Lockee, un message enregistré pourrait révéler un élément crucial de l’affaire.
+    </p>
+    <iframe src="https://lockee.fr/o/WHgoHML5?nobg&noft&top&light"></iframe>
+    <iframe src="https://lockee.fr/o/WvoAxQ1q?nobg&noft&top&light"></iframe>
+  </div>
+
+  <div id="etape4" style="display:none;">
+    <h2>Énigme 4 - L’événement d’escalade</h2>
+    <p>
+      En fouillant dans les réseaux sociaux de l’élève, les enquêteurs découvrent qu’elle a assisté à un événement d’escalade récent à Genève.  
+      Un lien avec la disparition pourrait être caché dans les détails de cette sortie sportive.En quelle année a-t-on vu la bataille de l'escalade à Genève?
+    </p>
+    <iframe src="https://lockee.fr/o/9L66VKXe?nobg&noft&top&light"></iframe>
+  </div>
+
+  <div id="etape5" style="display:none;">
+    <h2>Énigme 5 - La preuve d’innocence</h2>
+    <p>
+      Finalement, un élément décisif est retrouvé : une preuve qui semble disculper complètement l'élève.  
+      Elle n’aurait donc rien à voir avec la disparition ?
+    </p>
+    
+    <h3>Fin de l’enquête sur ce suspect</h3>
+    <a href="./suspects.html" onclick="localStorage.setItem('suspect4','done')" class="btn">
+      Retour aux suspects
+    </a>
+  </div>
+
+  <script>
+    const params = window.location.href.toUpperCase();
+    for (let i = 1; i <= 5; i++) {
+      document.getElementById("etape" + i).style.display = "none";
+    }
+
+    if (params.includes("BANANE")) {
+      document.getElementById("etape2").style.display = "block";
+    } else if (params.includes("POMME")) {
+      document.getElementById("etape3").style.display = "block";
+    } else if (params.includes("KIWI")) {
+      document.getElementById("etape4").style.display = "block";
+    } else if (params.includes("ANANAS")) {
+      document.getElementById("etape5").style.display = "block";
+    } else {
+      document.getElementById("etape1").style.display = "block";
+    }
+  </script>
+
 </body>
 </html>
