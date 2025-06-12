@@ -143,6 +143,12 @@
       <div class="overlay">✅ RÉSOLU</div>
       <div class="hover-indicator">👉 Cliquer pour enquêter</div>
     </a>
+
+    <a href="suspect5.html" class="suspect locked" id="suspect5" style="display:none;">
+      <img src="../img/mugshot-5.png" alt="Dernier suspect" />
+      <div class="overlay">✅ RÉSOLU</div>
+      <div class="hover-indicator">👉 Cliquer pour enquêter</div>
+    </a>
   </div>
 
 
@@ -184,6 +190,21 @@
         el.style.display = "none";
       }
     });
+    // Vérifie si les 4 premiers suspects sont résolus
+    if (
+      localStorage.getItem("suspect1") === "done" &&
+      localStorage.getItem("suspect2") === "done" &&
+      localStorage.getItem("suspect3") === "done" &&
+      localStorage.getItem("suspect4") === "done"
+    ) {
+      const s5 = document.getElementById("suspect5");
+      s5.classList.remove("locked");
+      s5.style.display = "block";
+      if (localStorage.getItem("suspect5") === "done") {
+        s5.classList.add("resolu");
+      }
+    }
+
   </script>
 </body>
 
