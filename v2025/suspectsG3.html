@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suspects : L'enquête</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #fff;
+    }
+
+    h1 {
+      text-align: center;
+      padding: 20px;
+      font-size: 1.8em;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .suspect {
+      position: relative;
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+      overflow: hidden;
+      text-decoration: none;
+      display: block;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .suspect img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .overlay,
+    .hover-indicator {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 1.8em;
+      text-align: center;
+      border-radius: 10px;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+    }
+
+    .overlay {
+      background-color: rgba(0, 255, 0, 0.5);
+      color: #000;
+      opacity: 0;
+    }
+
+    .hover-indicator {
+      background-color: rgba(0, 0, 0, 0.4);
+      color: #fff;
+      opacity: 0;
+    }
+
+    .suspect:hover .hover-indicator {
+      opacity: 1;
+    }
+
+    .suspect.resolu .overlay {
+      opacity: 1;
+    }
+
+    button {
+      margin: 40px auto 20px;
+      display: block;
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      border-radius: 8px;
+      background-color: #4CAF50;
+      color: white;
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 500px) {
+      .suspect {
+        max-width: 95%;
+      }
+    }
+    .btn {
+      display: inline-block;
+      padding: 18px 28px;
+      font-size: 3rem;
+      background-color: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border: none;
+      border-radius: 12px;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+      text-align: center;
+      width: 100%;
+      max-width: 400px;
+      margin: 20px auto;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Choisis un suspect à interroger</h1>
+
+  <div class="container">
+    <a href="suspect1.html" class="suspect" id="suspect1">
+      <img src="../img/mugshot-prof-maths.png" alt="Prof de maths" />
+      <div class="overlay">✅ RÉSOLU</div>
+      <div class="hover-indicator">👉 Cliquer pour enquêter</div>
+    </a>
+
+    <a href="suspect2.html" class="suspect" id="suspect2">
+      <img src="../img/mugshot-agent.png" alt="Agent technique" />
+      <div class="overlay">✅ RÉSOLU</div>
+      <div class="hover-indicator">👉 Cliquer pour enquêter</div>
+    </a>
+
+    <a href="suspect3.html" class="suspect" id="suspect3">
+      <img src="../img/mugshot-prof-musique.png" alt="Prof de musique" />
+      <div class="overlay">✅ RÉSOLU</div>
+      <div class="hover-indicator">👉 Cliquer pour enquêter</div>
+    </a>
+
+    <a href="suspect4.html" class="suspect locked" id="suspect4">
+      <img src="../img/mugshot-eleve.png" alt="L’ancienne élève" />
+      <div class="overlay">✅ RÉSOLU</div>
+      <div class="hover-indicator">👉 Cliquer pour enquêter</div>
+    </a>
+
+    <a href="suspect5.html" class="suspect locked" id="suspect5" style="display:none;">
+      <img src="../img/mugshot-5.png" alt="Dernier suspect" />
+      
+      <div class="hover-indicator">👉 Cliquer pour enquêter</div>
+    </a>
+  </div>
+
+
+ <script>
+  const orderedSuspects = ["suspect4", "suspect2", "suspect1", "suspect3"];
+  const suspect5 = document.getElementById("suspect5");
+
+
+  orderedSuspects.forEach((id, index) => {
+    const el = document.getElementById(id);
+    
+    // Masquer tous les suspects au départ
+    el.style.display = "none";
+    });
+
+  orderedSuspects.forEach((id, index) => {
+    const el = document.getElementById(id);
+    
+    
+    // Si ce suspect est résolu
+    if (localStorage.getItem(id) === "done") {
+      el.classList.add("resolu");
+      el.style.display = "block";
+
+      // Débloquer le suivant dans la liste
+      const nextId = orderedSuspects[index + 1];
+      
+      if (nextId) {
+        const nextEl = document.getElementById(nextId);
+        if (nextEl && localStorage.getItem(nextId) !== "done") {
+          nextEl.style.display = "block";
+          
+        }
+      }
+    }
+  });
+
+  // Afficher le tout premier (suspect2) s’il n’a pas encore été résolu
+  const first = document.getElementById(orderedSuspects[0]);
+  if (first && !localStorage.getItem(orderedSuspects[0])) {
+    first.style.display = "block";
+  }
+
+  // Débloquer suspect5 si tous les autres sont faits
+  const allResolved = orderedSuspects.every(id => localStorage.getItem(id) === "done");
+  if (allResolved && suspect5) {
+    suspect5.style.display = "block";
+    suspect5.classList.remove("locked");
+    if (localStorage.getItem("suspect5") === "done") {
+      suspect5.classList.add("resolu");
+    }
+  } else if (suspect5) {
+    suspect5.style.display = "none";
+  }
+</script>
+</body>
+
+
+</html>
